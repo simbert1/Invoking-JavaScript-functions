@@ -1,0 +1,8 @@
+C:\Users\SIMBA\source\repos\HMS\HMS\Shared\bin\Debug\netstandard2.1\HMS.Shared.deps.json
+C:\Users\SIMBA\source\repos\HMS\HMS\Shared\bin\Debug\netstandard2.1\HMS.Shared.dll
+C:\Users\SIMBA\source\repos\HMS\HMS\Shared\bin\Debug\netstandard2.1\HMS.Shared.pdb
+C:\Users\SIMBA\source\repos\HMS\HMS\Shared\obj\Debug\netstandard2.1\HMS.Shared.AssemblyInfoInputs.cache
+C:\Users\SIMBA\source\repos\HMS\HMS\Shared\obj\Debug\netstandard2.1\HMS.Shared.AssemblyInfo.cs
+C:\Users\SIMBA\source\repos\HMS\HMS\Shared\obj\Debug\netstandard2.1\HMS.Shared.csproj.CoreCompileInputs.cache
+C:\Users\SIMBA\source\repos\HMS\HMS\Shared\obj\Debug\netstandard2.1\HMS.Shared.dll
+C:\Users\SIMBA\source\repos\HMS\HMS\Shared\obj\Debug\netstandard2.1\HMS.Shared.pdb

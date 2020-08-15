@@ -1,0 +1,16 @@
+﻿
+    <div>
+        <p> Title: @((MarkupString)book.Tittle)</p>
+        <p> Release Date: @book.ReleaseDate.ToString("dd MMM yyyy")  </p>
+
+        @if (DisplayButtons)
+        {
+            <button @onclick="@(()=> DeleteBooks.InvokeAsync(book))">Delete</button>
+        }
+    </div>
+@code {
+    [Parameter] public Books book { get; set; }
+    [Parameter] public bool DisplayButtons { get; set; } = false;
+    [Parameter] public EventCallback<Books> DeleteBooks { get; set;}
+    
+}

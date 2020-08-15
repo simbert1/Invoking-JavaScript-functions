@@ -1,0 +1,61 @@
+﻿@page "/"
+
+    <div>
+        <h1>
+            Books
+        </h1>
+        @*put the component here*@
+       
+       <BookList book=" book "/>
+          
+    </div>
+    <div>
+        <button @onclick="AddNewBook">
+            Add a new movie
+        </button>
+    </div>
+@*<div>
+    <h2>Create Book</h2>
+    <DummyTextBox @attributes=" dummyTextboxParameters"></DummyTextBox>
+</div>*@
+
+@code
+{
+    /// <summary>
+    /// create a list of books
+    /// </summary>
+    private List<Books> book;
+    private Dictionary<string, object> dummyTextboxParameters = new Dictionary<string, object>() { { "placeholder","book name"},{ "disabled","true"} };
+    protected async  override Task   OnInitializedAsync()
+    {
+        //await Task.Delay(2000);
+        book = new List<Books>()
+        {
+            new Books()
+             {
+                Tittle = "Harry Potter",
+                ReleaseDate = new DateTime(2008, 9, 8)
+            },
+             new Books()
+             {
+                Tittle = "Django",
+                ReleaseDate = new DateTime(2009, 7, 8)
+            },
+              new Books()
+             {
+                Tittle = "40 Laws of Power",
+                ReleaseDate = new DateTime(2018, 4, 8)
+            }
+        };
+    }
+
+    private void AddNewBook()
+    {
+        book.Add(new Books()
+        {
+            Tittle = "Imperial aflication",
+            ReleaseDate = new DateTime(2009, 7, 8)
+        });
+    }
+
+}

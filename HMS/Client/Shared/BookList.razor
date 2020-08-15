@@ -1,0 +1,44 @@
+﻿@inject IJSRuntime js
+
+    <input type="checkbox" @bind="displayButtons" />
+   <GenericList List="book">
+       <ElementTemplate Context="book_">
+           <IndividualBookList book=" book_ " DisplayButtons="displayButtons" DeleteBooks="DeleteBook"/>
+       </ElementTemplate>
+   </GenericList>
+
+@code {
+    [Parameter] public List<Books> book { get; set; }
+    [Parameter] public RenderFragment NullTemplate { get; set; }
+    [Parameter] public RenderFragment EmptyTemplate { get; set; }
+    bool displayButtons = false;
+    private async Task DeleteBook(Books books)
+    {
+        var confirmed = await js.Confirm($"Are you sure you want to delete {books.Tittle } ?");
+        if (confirmed)
+        {
+            book.Remove(books);
+        }
+
+
+    }
+
+
+    protected override void OnInitialized()
+    {
+        Console.WriteLine("OnInitialized. book.count =" + book.Count.ToString());
+    }
+
+    protected override void OnParametersSet()
+    {
+        Console.WriteLine("OnParametersSet. book.count =" + book.Count.ToString());
+    }
+    protected override void OnAfterRender(bool firstRender)
+    {
+        Console.WriteLine("OnAfterRender. firstrender =" + firstRender.ToString());
+    }
+    protected override bool ShouldRender()
+    {
+        return true;
+    }
+}

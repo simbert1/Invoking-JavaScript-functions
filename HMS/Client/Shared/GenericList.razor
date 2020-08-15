@@ -1,0 +1,43 @@
+﻿@typeparam TIem
+
+@if (List  == null)
+{
+    @*<text>Loading Items.....</text>*@
+    @if (NullTemplate != null)
+    {
+        @NullTemplate
+    }
+    else
+    {
+        <text> Child Content is null</text>
+    }
+
+}
+else if (List.Count == 0)
+{
+    @if (EmptyTemplate != null)
+    {
+        @EmptyTemplate
+    }
+    else
+    {
+        <text> The count is zero</text>
+    }
+}
+else
+{
+
+  
+    @foreach (var element in List)
+    {
+
+       @ElementTemplate(element);
+    }
+}
+
+@code {
+    [Parameter] public RenderFragment NullTemplate { get; set; }
+    [Parameter] public RenderFragment EmptyTemplate { get; set; }
+    [Parameter] public RenderFragment<TIem> ElementTemplate { get; set; }
+    [Parameter] public List<TIem> List { get; set; }
+}
